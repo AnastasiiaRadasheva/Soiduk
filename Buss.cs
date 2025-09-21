@@ -10,20 +10,19 @@ namespace Sõidukite
 
     public class Buss : ISõiduk
     {
-        private double kütusekulu; 
+        private double kütusekulu;
         private double vahemaa;
-        private int reisijad; 
+        private int reisijad;
 
-        public Buss(double kütusekulu, double vahemaa, int reisijad)
+        public Buss(double kulu, double kaugus, int reisijaArv)
         {
-            kütusekulu = kütusekulu; 
-            vahemaa = vahemaa;       
-            reisijad = reisijad;  
+            kütusekulu = kulu;
+            vahemaa = kaugus;
+            reisijad = reisijaArv;
         }
 
         public double ArvutaKulu()
         {
-
             return (kütusekulu * vahemaa) / (100 * reisijad);
         }
 

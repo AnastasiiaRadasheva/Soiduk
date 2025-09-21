@@ -9,16 +9,16 @@ namespace Sõidukite
 {
     public class Jalgratas : ISõiduk
     {
-        private double vahemaa; 
+        private double vahemaa;
 
-        public Jalgratas(double vahemaa)
+        public Jalgratas(double kaugus)
         {
-            vahemaa = vahemaa; 
+            vahemaa = kaugus;
         }
 
         public double ArvutaKulu()
         {
-            return 0; 
+            return 0;
         }
 
         public double ArvutaVahemaa()

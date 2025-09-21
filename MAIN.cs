@@ -16,44 +16,44 @@ namespace Sõidukite
             List<ISõiduk> sõidukid = new List<ISõiduk>();
 
             Console.WriteLine("Sisesta sõiduki tüüp (Auto, Jalgratas, Buss, ElektrilineTõukeratas): ");
-            string sõidukiTüüp = Console.ReadLine().ToLower();
+            string tyyp = Console.ReadLine().ToLower();
 
-            if (sõidukiTüüp == "auto")
+            if (tyyp == "auto")
             {
                 Console.Write("Sisesta auto kütusekulu (liitrid/100km): ");
-                double autoKütusekulu = double.Parse(Console.ReadLine());
+                double kulu = double.Parse(Console.ReadLine());
 
                 Console.Write("Sisesta auto läbitud kaugus (km): ");
-                double autoVahemaa = double.Parse(Console.ReadLine());
+                double kaugus = double.Parse(Console.ReadLine());
 
-                sõidukid.Add(new Auto(autoKütusekulu, autoVahemaa));
+                sõidukid.Add(new Auto(kulu, kaugus));
             }
-            else if (sõidukiTüüp == "jalgratas")
+            else if (tyyp == "jalgratas")
             {
                 Console.Write("Sisesta jalgratta läbitud kaugus (km): ");
-                double jalgrattaVahemaa = double.Parse(Console.ReadLine());
+                double kaugus = double.Parse(Console.ReadLine());
 
-                sõidukid.Add(new Jalgratas(jalgrattaVahemaa));
+                sõidukid.Add(new Jalgratas(kaugus));
             }
-            else if (sõidukiTüüp == "buss")
+            else if (tyyp == "buss")
             {
                 Console.Write("Sisesta bussi kütusekulu (liitrid/100km): ");
-                double bussKütusekulu = double.Parse(Console.ReadLine());
+                double kulu = double.Parse(Console.ReadLine());
 
                 Console.Write("Sisesta bussi läbitud kaugus (km): ");
-                double bussVahemaa = double.Parse(Console.ReadLine());
+                double kaugus = double.Parse(Console.ReadLine());
 
                 Console.Write("Sisesta reisijate arv: ");
-                int bussReisijad = int.Parse(Console.ReadLine());
+                int reisijad = int.Parse(Console.ReadLine());
 
-                sõidukid.Add(new Buss(bussKütusekulu, bussVahemaa, bussReisijad));
+                sõidukid.Add(new Buss(kulu, kaugus, reisijad));
             }
-            else if (sõidukiTüüp == "elektrilinetõukeratas")
+            else if (tyyp == "elektrilinetõukeratas")
             {
                 Console.Write("Sisesta elektrilise tõukeratta läbitud kaugus (km): ");
-                double tõukeratasVahemaa = double.Parse(Console.ReadLine());
+                double kaugus = double.Parse(Console.ReadLine());
 
-                sõidukid.Add(new ElektrilineTõukeratas(tõukeratasVahemaa));
+                sõidukid.Add(new ElektrilineTõukeratas(kaugus));
             }
             else
             {
@@ -62,10 +62,10 @@ namespace Sõidukite
             }
 
             double kogukulu = 0;
-            foreach (var sõiduk in sõidukid)
+            foreach (var s in sõidukid)
             {
-                Console.WriteLine(sõiduk.ToString());
-                kogukulu += sõiduk.ArvutaKulu();
+                Console.WriteLine(s.ToString());
+                kogukulu += s.ArvutaKulu();
             }
 
             Console.WriteLine($"Kõigi sõidukite kütusekulu kokku: {kogukulu} liitrit");

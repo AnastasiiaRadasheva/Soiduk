@@ -11,13 +11,13 @@ namespace Sõidukite
 
     public class Auto : ISõiduk
     {
-        private double kütusekulu; 
-        private double vahemaa; 
+        private double kütusekulu;
+        private double vahemaa;
 
-        public Auto(double kütusekulu, double vahemaa)
+        public Auto(double kulu, double kaugus)
         {
-            kütusekulu = kütusekulu;  
-            vahemaa = vahemaa;       
+            kütusekulu = kulu;
+            vahemaa = kaugus;
         }
 
         public double ArvutaKulu()
